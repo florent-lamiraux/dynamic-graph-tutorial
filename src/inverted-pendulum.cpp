@@ -158,7 +158,7 @@ Vector InvertedPendulum::computeDynamics(const Vector& inState,
 }
 
 void InvertedPendulum::incr(double inTimeStep) {
-  int t = stateSOUT.getTime();
+  sigtime_t t = stateSOUT.getTime();
   Vector nextState = computeDynamics(stateSOUT(t), forceSIN(t), inTimeStep);
   stateSOUT.setConstant(nextState);
   stateSOUT.setTime(t + 1);

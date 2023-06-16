@@ -84,8 +84,8 @@ The name of the class is stored as a static member
 \endcode
 In the private part of the class, we store signals
 \code
-          SignalPtr< double, int > forceSIN;
-          Signal< Vector, int> stateSOUT;
+          SignalPtr< double, sigtime_t > forceSIN;
+          Signal< Vector, sigtime_t> stateSOUT;
 \endcode
 and parameters
 \code

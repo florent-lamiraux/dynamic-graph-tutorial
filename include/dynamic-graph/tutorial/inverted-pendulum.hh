@@ -137,11 +137,11 @@ class InvertedPendulum : public Entity {
   /**
      \brief Input force acting on the inverted pendulum
   */
-  SignalPtr<double, int> forceSIN;
+  SignalPtr<double, sigtime_t> forceSIN;
   /**
      \brief State of the inverted pendulum
   */
-  Signal< ::dynamicgraph::Vector, int> stateSOUT;
+  Signal< ::dynamicgraph::Vector, sigtime_t> stateSOUT;
 
   /// \brief Mass of the cart
   double cartMass_;

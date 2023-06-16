@@ -64,16 +64,16 @@ class FeedbackController : public Entity {
   /**
      Compute the control law
   */
-  double& computeForceFeedback(double& force, const int& inTime);
+  double& computeForceFeedback(double& force, const sigtime_t& inTime);
 
   /**
      \brief State of the inverted pendulum
   */
-  SignalPtr< ::dynamicgraph::Vector, int> stateSIN;
+  SignalPtr< ::dynamicgraph::Vector, sigtime_t> stateSIN;
   /**
      \brief Force computed by the control law
   */
-  SignalTimeDependent<double, int> forceSOUT;
+  SignalTimeDependent<double, sigtime_t> forceSOUT;
 
   /// \brief Gain of the controller
   ::dynamicgraph::Matrix gain_;

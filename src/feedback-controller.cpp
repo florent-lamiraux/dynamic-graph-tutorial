@@ -39,7 +39,7 @@ FeedbackController::FeedbackController(const std::string& inName)
   stateSIN.setConstant(state);
 
   // Define refresh function for output signal
-  boost::function2<double&, double&, const int&> ftest =
+  boost::function2<double&, double&, const sigtime_t&> ftest =
       boost::bind(&FeedbackController::computeForceFeedback, this, _1, _2);
 
   forceSOUT.setFunction(
@@ -69,7 +69,7 @@ FeedbackController::FeedbackController(const std::string& inName)
 FeedbackController::~FeedbackController() {}
 
 double& FeedbackController::computeForceFeedback(double& force,
-                                                 const int& inTime) {
+                                                 const sigtime_t& inTime) {
   const Vector& state = stateSIN(inTime);
 
   if (state.size() != 4)
